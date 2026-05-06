@@ -14,14 +14,20 @@
 
   <h1>Summary:</h1>
   <p>
-    This project aims to build a deep learning-based analysis tool that PM can utilize for operational decision-making by utilizing real user data from dopamine management app 'Dopamedi. 
-Based on approximately 200 users, 3000 daily usage records, and 6000 session records, we implement a two-step sequence learning model.
-
-The first stage is a GRU-based departure prediction model. By receiving the user's daily usage sequence (app usage time, recommended app usage time, achievement rate, etc.) for the last 14 days, the probability of departure is predicted within the next 14 days. 14 consecutive days of unused is defined as departure
-
-The second step is to cluster the departure pattern through a sequence autoencoder. After compressing the sequence immediately before the departure of the defector into a low-dimensional embedding, the departure type is discovered and qualitatively analyzed through KMeans clustering and t-SNE visualization.
-
-The core value of this project is that it deals with both supervised and unsupervised representation learning as a single sequence model, and the results will be directly utilized in establishing Dopamedi’s user retention strategy.
+    This project aims to build a deep learning-based analysis tool that product managers can use for operational decision-making, using real-world user data from a dopamine management app called Dopamedi.
+    The dataset contains approximately 200 users, 3,000 daily usage records, and 6,000 session records, and we implement a two-step sequence learning approach.
+  </p>
+  
+  <p>
+    The first stage is a GRU-based churn prediction model. Using each user's daily usage sequence over the past 14 days (e.g., app usage time, recommended usage time, achievement rate), the model predicts the probability of churn within the next 14 days. We define churn as 14 consecutive days of inactivity.
+  </p>
+  
+  <p>
+    The second stage clusters churn patterns using a sequence autoencoder. By compressing the usage sequence immediately before churn into a low-dimensional embedding, we identify different churn types and analyze them qualitatively through KMeans clustering and t-SNE visualization.
+  </p>
+  
+  <p>
+    The key contribution of this project is that it combines supervised prediction and unsupervised representation learning within a unified sequence modeling framework. The results will be directly applied to improve Dopamedi’s user retention strategy.
   </p>
 </body>
 </html>
